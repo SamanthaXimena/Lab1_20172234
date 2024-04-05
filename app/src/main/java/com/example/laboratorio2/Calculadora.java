@@ -2,9 +2,7 @@ package com.example.laboratorio2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Calculadora extends AppCompatActivity {
 
     TextView texto_Resultado;
     float numero1 = 0.0f;
@@ -35,19 +33,31 @@ public class MainActivity3 extends AppCompatActivity {
 
         ImageView leftIcon = findViewById(R.id.left_icon2);
         TextView title = findViewById(R.id.toolbar_title2);
+        ImageView rightIcon = findViewById(R.id.right_icon);
 
         leftIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(MainActivity2.this , MainActivity.class);
 
-                Intent intent = new Intent(MainActivity3.this, MainActivity.class);
+                Intent intent = new Intent(Calculadora.this, PaginaInicial.class);
+                startActivity(intent);
+            }
+        });
+
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MainActivity2.this , MainActivity.class);
+
+                Intent intent = new Intent(Calculadora.this, Historial.class);
                 startActivity(intent);
             }
         });
 
         title.setText("TeleMath");
 
+// SECCION CALCULADORA
         texto_Resultado = findViewById(R.id.numero2);
         //texto_Resultado.setText("PRUEBAA");
 

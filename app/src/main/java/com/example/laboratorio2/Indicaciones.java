@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Indicaciones extends AppCompatActivity {
 
     Button Calcular2;
 
@@ -38,7 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(MainActivity2.this , MainActivity.class);
 
-                Intent intent = new Intent(MainActivity2.this, MainActivity.class);
+                Intent intent = new Intent(Indicaciones.this, PaginaInicial.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
         Calcular2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+               Intent intent = new Intent(Indicaciones.this, Calculadora.class);
                 startActivity(intent);
             }
         });

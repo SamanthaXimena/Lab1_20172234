@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
+    tools:context=".Calculadora">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -19,9 +19,9 @@
 
 
         <ImageView
-            android:id="@+id/left_icon2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/left_icon2"
             android:src="@drawable/baseline_arrow_back_24" />
 
         <TextView
@@ -35,6 +35,12 @@
             android:text="TeleMath"
             android:textSize="20sp" />
 
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/baseline_history_24" />
 
     </RelativeLayout>
 
