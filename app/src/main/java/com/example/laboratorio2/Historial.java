@@ -32,7 +32,7 @@ public class Historial extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Historial.this, PaginaInicial.class);
+                Intent intent = new Intent(Historial.this, Calculadora.class);
                 startActivity(intent);
             }
         });

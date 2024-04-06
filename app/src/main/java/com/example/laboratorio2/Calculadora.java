@@ -18,112 +18,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class Calculadora extends AppCompatActivity {
 
 
-    /* //opcion1
-    TextView texto_Resultado;
-    float numero1 = 0.0f;
-    float numero2 = 0.0f;
-    String operacion = "";
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_calculadora);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        ImageView leftIcon = findViewById(R.id.left_icon2);
-        TextView title = findViewById(R.id.toolbar_title2);
-        ImageView rightIcon = findViewById(R.id.right_icon);
-
-        leftIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity2.this , MainActivity.class);
-
-                Intent intent = new Intent(Calculadora.this, PaginaInicial.class);
-                startActivity(intent);
-            }
-        });
-
-        rightIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(MainActivity2.this , MainActivity.class);
-
-                Intent intent = new Intent(Calculadora.this, Historial.class);
-                startActivity(intent);
-            }
-        });
-
-        title.setText("TeleMath");
-
-// SECCION CALCULADORA
-        texto_Resultado = findViewById(R.id.numero2);
-        //texto_Resultado.setText("PRUEBAA");
-
-    }
-
-    public void EscribirSiete(View view){
-        numero1 = Float.parseFloat(texto_Resultado.getText().toString()); // texyto combierte en string
-
-        if(numero1 == 0.0f){
-            texto_Resultado.setText("7");
-        }else{
-            texto_Resultado.setText(texto_Resultado.getText() + "7");
-        }
-    }
-
-    public void EscribirOcho(View view){
-        numero1 = Float.parseFloat(texto_Resultado.getText().toString()); // texyto combierte en string
-        numero2 = Float.parseFloat(texto_Resultado.getText().toString());
-
-        if(numero1 == 0.0f){
-            texto_Resultado.setText("8");
-        }else{
-            texto_Resultado.setText(texto_Resultado.getText() + "8");
-        }
-    }
-
-
-    public void BorrarNumero(View view){
-        texto_Resultado.setText("0");
-        numero1 = 0.0f;
-        numero2 = 0.0f;
-        operacion = "";
-    }
-
-    public void operacion_dividir(View view){
-
-        numero1 = Float.parseFloat(texto_Resultado.getText().toString());
-        numero2 = Float.parseFloat(texto_Resultado.getText().toString());
-        operacion = "/";
-        texto_Resultado.setText("0");
-
-    }
-    public void mostrar_resultado(View view){
-
-        numero2 = Float.parseFloat(texto_Resultado.getText().toString());
-        if(operacion.equals("/")){
-            if(numero2 == 0.0f){
-                texto_Resultado.setText("0");
-                Toast.makeText(this, "operacion no valida", Toast.LENGTH_LONG).show();
-            }else{
-                float result = numero1/numero2;
-                texto_Resultado.setText(result + "");
-            }
-        }
-    }
-
-     */
-
-    //opcion2
-
     TextView numero_1;
     TextView numero_2;
     int oper = 0;
@@ -176,7 +70,7 @@ public class Calculadora extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 num2 = Double.parseDouble(numero_2.getText().toString());
-
+                /*
                 switch (oper){
 
                     case 1:
@@ -187,7 +81,13 @@ public class Calculadora extends AppCompatActivity {
                         resp = num1*num2;
                     case 4:
                         resp = num1/num2;
-                }
+                } */
+
+                if(oper == 1){ resp = num1 + num2;}
+                else if (oper == 2) { resp = num1 - num2;}
+                else if (oper == 3) { resp = num1 * num2;}
+                else if (oper == 4) { resp = num1 / num2;}
+
 
                 numero_2.setText(resp.toString());
                 numero_1.setText(" ");
@@ -197,7 +97,6 @@ public class Calculadora extends AppCompatActivity {
         btnborrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numero_1.setText(" ");
                 numero_2.setText(" ");
                 num1 = 0.0;
                 oper = 0;
