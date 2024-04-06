@@ -37,7 +37,6 @@ public class Historial extends AppCompatActivity {
             }
         });
 
-
         title.setText("TeleMath");
 
 
